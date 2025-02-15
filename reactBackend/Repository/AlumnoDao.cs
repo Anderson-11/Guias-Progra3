@@ -43,5 +43,87 @@ namespace reactBackend.Repository
             return alumno == null ? null : alumno;
         }
         #endregion
+
+        #region Insert Alumno
+        public bool insertarAlumno(Alumno alumno)
+        {
+            try
+            {
+                var alum = new Alumno
+                {
+                    Direccion = alumno.Direccion,
+                    Edad = alumno.Edad,
+                    Email = alumno.Email,
+                    Dni = alumno.Dni,
+                    Nombre = alumno.Nombre
+                };
+                // añadimos al contexto de (Dataset) que representa la base de datos
+                // el metodo add
+                contexto.Alumnos.Add(alum);
+                // este elemento en si no nos guardara los datos para ello debemos utilizar el metodo Sabe
+                contexto.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region Update Alumno
+        public bool update(int id, Alumno actualizar)
+        {
+            try
+            {
+                var alumnoUpdate = GetById(id);
+                if (alumnoUpdate == null)
+                {
+                    Console.WriteLine("Alumno es null");
+                    return false;
+                }
+                alumnoUpdate.Direccion = actualizar.Direccion;
+                alumnoUpdate.Dni = actualizar.Dni;
+                alumnoUpdate.Nombre = actualizar.Nombre;
+                alumnoUpdate.Email = actualizar.Email;
+                alumnoUpdate.Edad = actualizar.Edad;
+
+                contexto.Alumnos.Update(alumnoUpdate);
+                contexto.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.InnerException);
+                return false;
+            }
+        }
+        #endregion
+
+        #region delete Alumno
+        public bool deleteAlumno(int id)
+        {
+            var borrar = GetById(id);
+            try
+            {
+                if (borrar == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    contexto.Alumnos.Remove(borrar);
+                    contexto.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.InnerException);
+                return false;
+            }
+        }
+        #endregion
+
     }
 }
