@@ -12,3 +12,4 @@ C:\Users\cisne\OneDrive\Documents\Guias React\NotasProyecto\reactBackend\obj\Deb
 C:\Users\cisne\OneDrive\Documents\Guias React\NotasProyecto\reactBackend\obj\Debug\net8.0\reactBackend.pdb
 C:\Users\cisne\OneDrive\Documents\Guias React\NotasProyecto\reactBackend\obj\Debug\net8.0\reactBackend.genruntimeconfig.cache
 C:\Users\cisne\OneDrive\Documents\Guias React\NotasProyecto\reactBackend\obj\Debug\net8.0\ref\reactBackend.dll
+C:\Users\cisne\OneDrive\Documents\Guias React\NotasProyecto\reactBackend\obj\Debug\net8.0\reactBackend.sourcelink.json
