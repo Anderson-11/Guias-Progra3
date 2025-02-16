@@ -11,13 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("reactBackend")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bdeb129e53e3413117727ffe5e596fc20268297")]
-[assembly: System.Reflection.AssemblyProductAttribute("reactBackend")]
-[assembly: System.Reflection.AssemblyTitleAttribute("reactBackend")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("Swashbuckle.AspNetCore.SwaggerGen")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

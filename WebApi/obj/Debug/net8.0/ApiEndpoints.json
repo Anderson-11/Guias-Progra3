@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "WebApi.Controllers.Prueba",
+    "Method": "Get",
+    "RelativePath": "api/Prueba/prueba",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
