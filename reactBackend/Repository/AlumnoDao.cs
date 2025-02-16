@@ -140,5 +140,27 @@ namespace reactBackend.Repository
         }
         #endregion
 
+        #region leftjoinAlumnoMatriculaMateria
+        public List<AlumnoProfesor> alumnoProfesors(string nombreProfesor)
+        {
+            var listadoALumno = from a in contexto.Alumnos
+                                join m in contexto.Matriculas on a.Id equals m.AlumnoId
+                                join asig in contexto.Asignaturas on m.AsignaturaId equals asig.Id
+                                where asig.Profesor == nombreProfesor
+                                select new AlumnoProfesor
+                                {
+                                    Id = a.Id,
+                                    Dni = a.Dni,
+                                    Nombre = a.Nombre,
+                                    Direccion = a.Direccion,
+                                    Edad = a.Edad,
+                                    Email = a.Email,
+                                    Asignatura = asig.Nombre
+                                };
+
+            return listadoALumno.ToList();
+        }
+        #endregion
+
     }
 }
