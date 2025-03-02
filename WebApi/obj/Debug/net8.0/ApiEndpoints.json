@@ -188,6 +188,32 @@
   },
   {
     "ContainingType": "WebApi.Controllers.CalificacionController",
+    "Method": "delete",
+    "RelativePath": "api/calificacion",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCalificacion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.CalificacionController",
     "Method": "get",
     "RelativePath": "api/calificaciones",
     "HttpMethod": "GET",
