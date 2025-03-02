@@ -53,6 +53,37 @@
   },
   {
     "ContainingType": "WebApi.Controllers.AlumnoController",
+    "Method": "insertarMatricula",
+    "RelativePath": "api/alumno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alumno",
+        "Type": "reactBackend.Models.Alumno",
+        "IsRequired": true
+      },
+      {
+        "Name": "idAsignatura",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.AlumnoController",
     "Method": "GetAlumnoProfesor",
     "RelativePath": "api/alumnoProfesor",
     "HttpMethod": "GET",

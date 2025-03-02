@@ -162,5 +162,68 @@ namespace reactBackend.Repository
         }
         #endregion
 
+        #region SelccionarPorDni
+        public Alumno DNIAlumno(Alumno alumno)
+        {
+            var alumnos = contexto.Alumnos.Where(x => x.Dni == alumno.Dni).FirstOrDefault();
+            return alumnos == null ? null : alumnos;
+        }
+        #endregion
+
+        #region AlumnoMatricula
+        public bool InsertarMatricula(Alumno alumno, int idAsing)
+        {
+
+            try
+            {
+                var alumnoDNI = DNIAlumno(alumno);
+                //si existe solo lo añadimos pero si no lo debemos de insertar
+                if (alumnoDNI == null)
+                {
+                    insertarAlumno(alumno);
+                    // si en null creamos el alumno pero ahora debemos de matricular el alumno con el Dni que corresponda
+                    var alumnoInsertado = DNIAlumno(alumno);
+                    // ahora debemos crear un objeto matricula para poder hacer la insercion de ambas llaves
+                    var unirAlumnoMatricula = matriculaAsignaturaALumno(alumno, idAsing);
+                    if (unirAlumnoMatricula == false)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                else
+                {
+                    matriculaAsignaturaALumno(alumnoDNI, idAsing);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        #endregion
+
+        #region Matriucla
+        public bool matriculaAsignaturaALumno(Alumno alumno, int idAsignatura)
+        {
+            try
+            {
+                Matricula matricula = new Matricula();
+                matricula.AlumnoId = alumno.Id;
+                matricula.AsignaturaId = idAsignatura;
+                contexto.Matriculas.Add(matricula);
+                contexto.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        #endregion
     }
 }
+
