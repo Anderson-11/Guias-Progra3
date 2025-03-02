@@ -162,6 +162,32 @@
   },
   {
     "ContainingType": "WebApi.Controllers.CalificacionController",
+    "Method": "insertar",
+    "RelativePath": "api/calificacion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "calificacion",
+        "Type": "reactBackend.Models.Calificacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.CalificacionController",
     "Method": "get",
     "RelativePath": "api/calificaciones",
     "HttpMethod": "GET",
